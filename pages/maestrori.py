@@ -39,16 +39,18 @@ with col1:
 with col2:
     filter_cols = st.multiselect("Seleccionar Categoria", opciones, default=['Informacion', 'Energia', 'Ubicacion'])
 
-if filter_cols:
-    for item in filter_cols:
-        filtered_df = data[['Nombre del Sitio']+dic[item]][data['Nombre del Sitio'] == site]
-        st.dataframe(filtered_df, hide_index=True, height=90, width=3000)
-else:
-    st.dataframe(data[data['Nombre del Sitio'] == site], hide_index=True, height=90, width=3000)
 
-df_map = data[data['Nombre del Sitio'] == site][['Nombre del Sitio','Latitud', 'Longitud']]
-map_url = 'https://www.google.com/maps/place/'+ df_map['Latitud'] + ',' + df_map['Longitud']
-df_map[['Latitud', 'Longitud']] = df_map[['Latitud', 'Longitud']].astype('float')
-df_map.columns = ['Sitio','latitude', 'longitude']
-st.map(df_map, size=8, zoom=16)
-st.link_button(label='Google URL', url=map_url.iloc[0])
+if site:
+    if filter_cols:
+        for item in filter_cols:
+            filtered_df = data[['Nombre del Sitio']+dic[item]][data['Nombre del Sitio'] == site]
+            st.dataframe(filtered_df, hide_index=True, height=90, width=3000)
+    else:
+        st.dataframe(data[data['Nombre del Sitio'] == site], hide_index=True, height=90, width=3000)
+
+    df_map = data[data['Nombre del Sitio'] == site][['Nombre del Sitio','Latitud', 'Longitud']]
+    map_url = 'https://www.google.com/maps/place/'+ df_map['Latitud'] + ',' + df_map['Longitud']
+    df_map[['Latitud', 'Longitud']] = df_map[['Latitud', 'Longitud']].astype('float')
+    df_map.columns = ['Sitio','latitude', 'longitude']
+    st.map(df_map, size=8, zoom=16)
+    st.link_button(label='Google URL', url=map_url.iloc[0])
