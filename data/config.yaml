@@ -6,18 +6,18 @@ credentials:
       first_name: Jonathan
       last_name: Zambrano
       logged_in: False # Will be managed automatically
-      password: jhzambrano # Will be hashed automatically
+      password: jhzambrano_31297 # Will be hashed automatically
       roles: # Optional
       - admin
       - editor
       - viewer
-    prengifo:
+    cmoreno:
       email: paul.rengifo@cnt.gob.ec
       failed_login_attempts: 0 # Will be managed automatically
       first_name: Paul
       last_name: Rengifo
       logged_in: False # Will be managed automatically
-      password: prengifo # Will be hashed automatically
+      password: cmoreno # Will be hashed automatically
       roles: # Optional
       - viewer
 cookie:
