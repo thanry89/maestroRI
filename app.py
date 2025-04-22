@@ -23,6 +23,8 @@ if st.session_state["authentication_status"]:
     st.title('Seleccionar Opción:')
     if st.button("Sitios RI"):
         st.switch_page('pages/maestrori.py')
+    if st.button("Trafico Celdas"):
+        st.switch_page('pages/celdas.py')
 
 elif st.session_state["authentication_status"] == False:
     st.error('Usuario o Contraseña incorrectos')
