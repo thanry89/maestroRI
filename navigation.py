@@ -24,6 +24,7 @@ def make_sidebar():
             st.page_link("app.py", label="Inicio")
             st.page_link("pages/maestrori.py", label="Sitios RI", icon="🔒")
             st.page_link("pages/celdas.py", label="Estado Celdas", icon="🕵️")
+            st.page_link("pages/poa.py", label="POA", icon="🕵️")
 
             st.write("")
             st.write("")

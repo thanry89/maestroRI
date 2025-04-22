@@ -25,6 +25,8 @@ if st.session_state["authentication_status"]:
         st.switch_page('pages/maestrori.py')
     if st.button("Trafico Celdas"):
         st.switch_page('pages/celdas.py')
+    if st.button("POA"):
+        st.switch_page('pages/poa.py')
 
 elif st.session_state["authentication_status"] == False:
     st.error('Usuario o Contraseña incorrectos')
