@@ -20,5 +20,3 @@ credentials:
       password: cmoreno # Will be hashed automatically
       roles: # Optional
       - viewer
-cookie:
-  expiry_days: 30

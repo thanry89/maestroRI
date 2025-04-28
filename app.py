@@ -10,10 +10,10 @@ with open('data/config.yaml') as file:
     config = yaml.load(file, Loader=SafeLoader)
 
 authenticator = stauth.Authenticate(
-    config['credentials'],
-    config['cookie']['expiry_days']
+    config['credentials']
 )
-authenticator.login(key='Entrar', location='main')
+
+authenticator.login()
 
 make_sidebar()
 
